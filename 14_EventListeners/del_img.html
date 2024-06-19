@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events 2</title>
+    <style>
+      img {
+        height: 200px;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul id="images">
+        <li>
+          <img src="owl.jpg" alt="owl image" id="owl" /> <button>remove</button>
+        </li>
+        <li>
+          <img src="jaipur.jpg" alt="" id="jaipur" /> <button>remove</button>
+        </li>
+        <li>
+          <img src="cat1.jpg" alt="cat image" id="cat1" />
+          <button>remove</button>
+        </li>
+        <li>
+          <img src="cat2.jpg" alt="cat image" id="cat2" />
+          <button>remove</button>
+        </li>
+        <li>
+          <img src="cat3.jpg" alt="cat image" id="cat3" />
+          <button>remove</button>
+        </li>
+        <a href="https://www.google.com/">google</a>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // my Approach
+
+    // const images = document.querySelectorAll("img");
+    // console.log(images);
+    // images.forEach(img=>{
+    //     console.log(img);
+    //     img.addEventListener('click',(e)=>{
+    //         e.stopPropagation();
+    //         img.remove();
+
+    //     },false)
+    // })
+
+    // Better way
+
+    document.querySelector("#images").addEventListener(
+      "click",
+      (e) => {
+        // console.log(e.target.parentNode);
+        // will aslo remove parent element which is li (else in my approch it removes img only and li is left on the page)
+
+        if (e.target.tagName == "IMG") {   // spill over 
+          let removeIt = e.target.parentNode;
+          removeIt.remove();
+          console.log(e.target.id + " is removed ");
+        }
+
+        // console.log(e.target.tagName);
+      },
+      false
+    );
+
+    // another way -- also avl
+
+    document.querySelector("a").addEventListener("click", (e) => {
+      e.preventDefault();
+      // e.stopPropagation()
+    });
+  </script>
+</html>

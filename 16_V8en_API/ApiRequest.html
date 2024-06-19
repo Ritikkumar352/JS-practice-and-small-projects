@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="cards">
+      <div class="card">
+        <!-- <h2>card here</h2> -->
+      </div>
+    </div>
+  </body>
+  <script>
+    const reqURL = "https://api.github.com/users/ritikkumar352";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", reqURL);
+
+    xhr.onreadystatechange = function () {
+      // console.log(xhr.readyState); // 0, 1, 2, 3
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText); // response is mostly received in STRING format .. convert it into JSON object
+        console.log(typeof this.responseText);
+        console.log(typeof data);
+        console.log(data.twitter_username);
+        console.log(data.following);
+        console.log(data.followers);
+        console.log(data);
+
+        const card = document.querySelector(".card");
+        const img = document.createElement("img");
+        console.log(data.avatar_url);
+        img.setAttribute("src", data.avatar_url);
+        // card.appendChild(img)  // used to append only a single element -- older
+        card.append(img); // used to append multiple elements newer DOM level 4
+        img.style.height = "200px";
+        img.style.borderRadius = "10px";
+
+        const p = document.createElement("p");
+        const followers = data.followers;
+        const following = data.following;
+        const user = data.login;
+        console.log(followers);
+        console.log(following);
+        p.innerText = `${user} has ${followers} follower and ${following} following`;
+        card.append(p);
+        // 4 == -- received wait inside this func to receive, data is not defined outside
+      }
+    };
+    xhr.send();
+
+    //ASSIGNMENT --- get image and follower and create a card.. and do more like enter username to get photo and followers
+  </script>
+</html>

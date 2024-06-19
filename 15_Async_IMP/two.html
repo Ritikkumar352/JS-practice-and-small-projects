@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: rgb(49, 49, 49);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    setTimeout(sayMyName, 2000); // method/function, but calls an API
+
+    function sayMyName() {
+      console.log("Ritik");
+    }
+
+    const changeH1 = function () {
+      document.querySelector("h1").innerHTML = "Changed H1";
+      console.log("h1 is changed");
+    };
+
+    const change1 = setTimeout(changeH1, 2000);
+
+    document.querySelector("#stop").addEventListener(
+      "click",
+      () => {
+        clearTimeout(change1);
+        console.log("change of h1 is stopped");
+      },
+      false
+    );
+  </script>
+</html>

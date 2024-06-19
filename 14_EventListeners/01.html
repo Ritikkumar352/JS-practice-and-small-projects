@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  <style>
+    img{
+      height:200px;
+      width:auto;
+    }
+  </style>
+  </head>
+  <body>
+    <div>
+      <ul id="images">
+        <li><img src="owl.jpg" alt="owl image" id="owl" /></li>
+        <li><img src="jaipur.jpg" alt="" id="jaipur"/></li>
+        <li><img src="" alt="" /></li>
+        <li><img src="" alt="" /></li>
+        <li><img src="" alt="" /></li>
+        <li><img src="" alt="" /></li>
+        <a href="https://www.google.com/">Google</a>
+      </ul>
+    </div>
+  </body>
+  <script>
+
+    // read DOCS of these
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shift key, key code
+
+
+    // un comment this code
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log(e);
+    //   },
+    //   false // false--event bubbling and true--event capturing
+    // ); // three argument last one is treu or false -- default false
+
+    const ul=document.getElementById('images');
+    ul.addEventListener('click',(e)=>{
+      console.log("clcicked inside ul");
+      // e.stopPropagation();
+    },false);
+
+    console.log(images);
+
+
+    const owl =document.getElementById('owl');
+    owl.addEventListener('click',(e)=>{
+      console.log("clciked on owl");
+      e.stopPropagation();
+    },false)
+
+    console.log(owl);
+
+    const jaipur=document.getElementById('jaipur');
+
+    // bubbling -- bubble bottom to top - false
+    // capturing -- top to bottom -- true
+
+    document.querySelector('a').addEventListener('click',(e)=>{
+      e.preventDefault();
+      console.log("clicked on google");
+      e.stopPropagation()
+    },false)
+    
+
+
+
+  </script>
+</html>
+
+
+
+
+
+
+
+
+<!--
+
+
+const img = document.getElementById("images");
+    img.addEventListener(
+      "click",
+      function (e) {
+        console.log("clicked inside the ul");
+      },
+      false
+    );
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (e) {
+        console.log("owl clicked");
+        // e.stopPropagation(); // stops bubbling
+      },
+      true
+    );
+    -->

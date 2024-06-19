@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <style>
+        /* Container styling */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 100px;
+        }
+
+        /* Block styling */
+        .block {
+            height: 150px; /* Adjust height as needed */
+        }
+
+        /* Different bright colors for blocks */
+        .block:nth-child(1) { background-color: #ff6f61; grid-column: span 2; }
+        .block:nth-child(2) { background-color: #6b5b95; }
+        .block:nth-child(3) { background-color: #88b04b; }
+        .block:nth-child(4) { background-color: #ffcc5c; }
+        .block:nth-child(5) { background-color: #d64161; grid-column: span 3; }
+        .block:nth-child(6) { background-color: #6b5b95; }
+        .block:nth-child(7) { background-color: #ff6f61; grid-column: span 2; }
+        .block:nth-child(8) { background-color: #88b04b; }
+        .block:nth-child(9) { background-color: #ffcc5c; }
+        .block:nth-child(10) { background-color: #d64161; grid-column: span 2; }
+        .block:nth-child(11) { background-color: #ff6f61; }
+        .block:nth-child(12) { background-color: #6b5b95; }
+        .block:nth-child(13) { background-color: #88b04b; grid-column: span 3; }
+        .block:nth-child(14) { background-color: #ffcc5c; }
+        .block:nth-child(15) { background-color: #d64161; }
+        .block:nth-child(16) { background-color: #ff6f61; grid-column: span 2; }
+        .block:nth-child(17) { background-color: #6b5b95; }
+        .block:nth-child(18) { background-color: #88b04b; grid-column: span 2; }
+        .block:nth-child(19) { background-color: #ffcc5c; }
+        .block:nth-child(20) { background-color: #d64161; }
+
+        /* Additional styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        /* animation */
+        @keyframes appear{
+            from{
+                opacity: 0;
+                scale: 0.5;
+            }
+            to{
+                opacity: 1;
+                transform: translate(100px);
+            }
+        }
+
+        .container{
+            animation: appear 5s linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Animate on scroll</h1>
+    <div class="container">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
+</body>
+</html>

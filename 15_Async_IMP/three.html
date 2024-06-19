@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: rgb(49, 49, 49);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hello Ritik</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const start = document.querySelector("#start");
+    const stop = document.querySelector("#stop");
+    const h1 = document.querySelector("h1");
+    console.log(start);
+    console.log(stop);
+    // ### TRY 3  ######  --- done working
+    start.addEventListener("click", print, false);
+    let intervalId;
+    function print() {
+      intervalId = setInterval(() => {
+        console.log("dateee");
+      }, 2000);
+    }
+
+    function stopPrinting() {
+      clearInterval(intervalId);
+      console.log("stopped printing");
+    
+    }
+    stop.addEventListener("click", stopPrinting, false);
+  </script>
+</html>
+
+
+
+<!-- 
+// #### TRY 2 ###
+
+// const changeH1 = function () {
+//   setInterval(() => {
+//     h1.innerHTML = "chnging h1 every 2 sec";
+//     console.log("chcnging");
+//   }, 2000);
+// };
+// btn1.addEventListener("click", changeH1, false);
+
+// btn2.addEventListener("click", stopChange, false);
+
+// function stopChange() {
+//   clearInterval(changeH1);
+//   console.log("interval cleared");
+// }
+
+
+
+// ####### TRY 1 ########### //
+
+// const change = setInterval(changeIt, 300, "changing");
+
+// function stopChange() {
+//   clearInterval(change);
+// }
+
+// btn1.addEventListener(
+//   "click",
+//   function changeIt(text) {
+//     h1.innerHTML = `${text} h1 to NICEEEEEEE`;
+//     console.log("changing "+ Date.now);
+//   },
+//   false
+// );
+
+// btn2.addEventListener("click", stopChange, false); -->

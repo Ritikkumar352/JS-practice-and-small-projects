@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>colour Changer</title>
+    <style>
+      body {
+        background-color: rgb(41, 41, 41);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      button {
+        padding: 7px;
+        font-size: 14px;
+        width: 80px;
+        margin: 5px;
+        border-radius: 10px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Color changer</h1>
+
+      <div>
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+      </div>
+
+      <p>Click on start, It'll start chnaging color like U DO !</p>
+    </div>
+    <script>
+      const start = document.querySelector(".start");
+      const stop = document.querySelector(".stop");
+      const mainDiv = document.querySelector(".main");
+      console.log(mainDiv);
+      console.log(start, stop);
+      console.log("hell");
+
+      //   console.log(`${val1} ${val2} ${val3}`);
+      let intervalId;
+      function startInterval() {
+        if (!intervalId) {
+          intervalId = setInterval(changeColor, 200);
+        }
+      }
+
+      start.addEventListener("click", startInterval, false);
+
+      function changeColor() {
+        let val1 = Math.round(Math.random() * (255 - 0) + 0);
+        let val2 = Math.round(Math.random() * (255 - 0) + 0);
+        let val3 = Math.round(Math.random() * (255 - 0) + 0);
+        mainDiv.style.backgroundColor = `rgb(${val1},${val2},${val3})`;
+      }
+
+      stop.addEventListener("click", () => {
+        clearInterval(intervalId);
+        console.log("stopped");
+        mainDiv.style.backgroundColor = "";
+        intervalId = null;
+      });
+    </script>
+  </body>
+</html>
