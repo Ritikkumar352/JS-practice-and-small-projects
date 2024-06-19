@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI calaculator</title>
+  </head>
+  <style>
+    .bg {
+      background-color: #302f2f;
+      color: #fff;
+    }
+    label {
+      margin: 12px;
+    }
+    input {
+      margin: 12px;
+      border-radius: 12px;
+      border: none;
+      border-style: hidden;
+      padding: 10px;
+    }
+    input:focus {
+      outline: none;
+    }
+    #submit {
+      margin-left: 30%;
+      border-radius: 12px;
+    }
+    .guid {
+      margin: 12px;
+    }
+  </style>
+  <body class="bg">
+    <form action="">
+      <label for="">Height in Cm :</label>
+      <input type="text" name="" id="height" placeholder="0cm" />
+      <br />
+      <label for="">Weigth in Kg :</label>
+      <input type="text" name="" id="weight" />
+      <br />
+      <input type="submit" name="" id="submit" />
+    </form>
+
+    
+
+    <div class="guid">
+      <h1 class="result"></h1>
+      <h2 class="result2"></h2>
+      <h2>BMI weight guide</h2>
+      <p>Less than 18.6 = Under Weight</p>
+      <p>18.6 - 24.9 = Normal</p>
+      <p>More than 24.9 = OverWeight</p>
+    </div>
+  </body>
+  <script src="02.js"></script>
+</html>
