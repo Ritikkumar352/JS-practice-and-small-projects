@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Formatter</title>
+    <link rel="stylesheet" href="11.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-container">
+        <h2>Type In Your Words</h2>
+        <input type="text" id="input-field" placeholder="Type Your Text Here" />
+      </div>
+
+      <div class="btns-container">
+        <button class="btn uppercase">ABC</button>
+        <button class="btn lowercase">abc</button>
+        <button class="btn capitalize">Abc</button>
+        <button class="btn bold">B</button>
+        <button class="btn italic">/</button>
+        <button class="btn underline">ABC</button>
+      </div>
+
+      <p id="output-field">Output</p>
+    </div>
+
+    <script>
+      const input = document.querySelector("#input-field").value;
+      const btns = document.querySelectorAll(".btn");
+      console.log(btns);
+      let whichBtn;
+      const div = document.querySelector(".btns-container");
+      const output = document.querySelector("#output-field");
+      div.addEventListener(
+        "click",
+        (e) => {
+          let className = e.target.className;
+          const start = 4;
+          let end = className.length;
+          let trimClass = className.slice(start, end);
+
+          //   console.log(e.target.className);
+          console.log(start, end);
+          console.log(trimClass);
+          let res;
+          if (trimClass == "uppercase") {
+            res = input.toUpperCase();
+          } else if (trimClass == "lowercase") {
+            res = input.toLowerCase();
+            
+          } else if (trimClass == "capitalize") {
+            
+          } else if (trimClass == "bold") {
+            res = input.toLowerCase();
+          } else if (trimClass == "italic") {
+            res = input.toLowerCase();  // I think we need to use innerHTML <i> ${input}</i> for italic bold and unserline
+          } else if (trimClass == "underline") {
+            res = input.toLowerCase();
+          }else
+          {
+            alert("enter a valid text input!!")
+          }
+         
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

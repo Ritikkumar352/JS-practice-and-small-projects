@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Emojies</title>
+    <link rel="stylesheet" href="10.css" />
+  </head>
+  <body>
+    <h4>
+      As a user hover the mouse over emoji, get a new emoji. As the user moves
+      away mouse turn it into gray-scale
+    </h4>
+    <div id="emoji">🤣</div>
+
+    <script>
+     const emojis = [
+  "😆",
+  "😅",
+  "🤣",
+  "😂",
+  "😀",
+  "🤑",
+  "🤨",
+  "🙂",
+  "😊",
+  "😗",
+  "😛",
+  "😏",
+  "🤥",
+  "😴",
+  "🥺",
+  "😧",
+  "😇",
+  "😳",
+  "🙃",
+  "🥴",
+  "🧐",
+  "🤨",
+  "😒",
+  "🤔",
+  "🤭",
+  "🥰",
+  "🤐",
+  "👀",
+  "🤔",
+  "🤪",
+  "🥲",
+  "😃",
+  "😁",
+  "😬",
+  "🥱",
+  "😴",
+  "😛",
+  "😓",
+  "😔",
+  "😕",
+  "🙃",
+  "😲",
+  "😤",
+  "😭",
+  "😦",
+  "😧",
+  "😨",
+  "😩",
+  "🤯",
+  "😬",
+  "😰",
+  "😱",
+  "🥵",
+  "🥶",
+  "😳",
+  "🤪",
+  "😵",
+  "🥴"
+];
+        // console.log(emojis.length);
+        const btn=document.querySelector('#emoji')
+        console.log(btn);    
+        btn.addEventListener('mouseover',()=>{
+            const ran=Math.floor(Math.random()*58);
+            console.log(ran);
+           btn.textContent='';
+           const newEmoji=emojis[ran];
+           btn.textContent=newEmoji;
+        },false)
+
+    </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Unlimited colors</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      const start = document.querySelector("#start");
+      const stop = document.querySelector("#stop");
+      const body = document.querySelector("body");
+      console.log(start, stop, body);
+      let color = ["a", "b", "c", "d", "e", "f"];
+      let hex = "#";
+      let ref;
+      // different from last approach
+      start.addEventListener(   
+        //TODO - when start ic cliked multiple times it increase speed and don't stop 
+        "click",
+        () => {
+          ref = setInterval(() => {
+            for (i = 0; i <= 2; i++) {
+              let ran1 = Math.floor(Math.random() * 9);
+              let ran2 = Math.floor(Math.random() * 5);
+              hex += color[ran2];
+              hex += ran1;
+              console.log(hex);
+            }
+            console.log(hex);
+            body.style.backgroundColor = `${hex}`;
+            // console.log("click");
+            hex = "#";
+            console.log(`HEX 2 ${hex}`);
+          }, 300);
+        },
+        false
+      );
+
+      stop.addEventListener(
+        "click",
+        () => {
+          clearInterval(ref);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

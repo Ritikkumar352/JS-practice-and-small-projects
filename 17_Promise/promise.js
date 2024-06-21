@@ -17,7 +17,7 @@ promiseOne.then(function (x) {
   console.log("promise one 1 consumed");
 });
 
-// promide 2
+// promise 2
 
 new Promise(function (resolve, reject) {
   setTimeout(() => {
